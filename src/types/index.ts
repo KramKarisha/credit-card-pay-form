@@ -24,3 +24,9 @@ export interface MessegeProps {
 export interface PaymentSuccessProps {
 	isSubmitting: boolean;
 }
+
+export interface ModalProps {
+	checkSucccess: boolean | undefined;
+	open: boolean;
+	handleClose?: () => void;
+}

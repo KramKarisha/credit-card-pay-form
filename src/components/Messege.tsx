@@ -5,20 +5,26 @@ import Fail from '../assets/fail.png';
 import Success from '../assets/success.png';
 import { MessegeProps } from '../types';
 
+const style = {
+  display: 'flex',
+  alignItems: 'center',
+  fontSize: '25px',
+};
+
 export const Messege = ({ checkSucccess }: MessegeProps) => {
-	return (
-		<div className={checkSucccess === undefined ? 'none' : 'success'}>
-			{checkSucccess ? (
-				<span>
-					<img width={25} height={25} src={Success} alt="success" />
-					Payment is success
-				</span>
-			) : (
-				<span>
-					<img width={25} height={25} src={Fail} alt="fail" />
-					Payment failed
-				</span>
-			)}
-		</div>
-	);
+  return (
+    <div className={checkSucccess === undefined ? 'none' : 'success'}>
+      {checkSucccess ? (
+        <span style={style}>
+          <img style={{ marginRight: '15px' }} width={35} height={35} src={Success} alt="success" />
+          Payment is success
+        </span>
+      ) : (
+        <span style={style}>
+          <img style={{ marginRight: '15px' }} width={35} height={35} src={Fail} alt="fail" />
+          Payment failed
+        </span>
+      )}
+    </div>
+  );
 };

@@ -60,6 +60,7 @@ export default styled.div`
 		font-size: 24px;
 		margin: 0 auto;
 		display: flex;
+		align-items: center;
 		justify-content: center;
 
 		& > span {

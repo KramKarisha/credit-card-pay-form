@@ -2,16 +2,22 @@ const clearNumber = (value = '') => {
 	return value.replace(/\D+/g, '');
 };
 
+
 export const formatCreditCardNumber = (value: string) => {
 	if (!value) {
 		return value;
 	}
-	const clearValue = clearNumber(value);
-	const nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
-		4,
-		8
-	)} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
-	return nextValue.trim();
+	if(value.length <= 19) {
+		const clearValue = clearNumber(value);
+		const nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+			4,
+			8
+		)} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
+	
+		return nextValue.trim();
+	}
+	return ''
+	
 };
 
 export const formatCVC = (value: string) => {
